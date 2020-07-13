@@ -39,22 +39,18 @@ class FootballAdapter(private val footballList: FootballList) : RecyclerView.Ada
 
 
         holder.itemView.setOnClickListener {view : View ->
-            //   Navigation.findNavController(v).navigate(R.id.action_footballFragment_to_newFragment)
 
-//            val mFragment = NewFragment()
+
             val mArgs = Bundle()
             Log.d("argument will passed", footballList.data[position].source)
 
             mArgs.putString("Key", footballList.data[position].source.toString())
             view.findNavController().navigate(R.id.action_typeFragment_to_footballDetailsFragment,mArgs)
-
-
-
-
         }
 
-
     }
+
+
 
 
 }
