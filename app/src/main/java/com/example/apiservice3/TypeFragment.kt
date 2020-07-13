@@ -30,11 +30,16 @@ class TypeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_type, container, false)
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var limit = 10
+        var page = 1
+        var isLoading= false
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://128.199.183.164:8081/")
@@ -63,6 +68,10 @@ class TypeFragment : Fragment() {
         recyclerview.apply {
             layoutManager = LinearLayoutManager(activity)
             adapter = FootballAdapter(footballList)
+//            getpage(footballList)
         }
     }
+
+
+
 }

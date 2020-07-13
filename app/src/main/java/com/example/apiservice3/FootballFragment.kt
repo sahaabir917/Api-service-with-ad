@@ -9,8 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.apiservice3.FootballAdapter
 import com.example.apiservice3.R
 import com.google.gson.JsonObject
+import kotlinx.android.synthetic.main.fragment_type.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,22 +50,22 @@ class FootballFragment : Fragment() {
 
             override fun onResponse(call: Call<FootballList>, response: Response<FootballList>) {
               d("Abir","succcess")
-             //   showAllData(response.body()!!)
+               showAllData(response.body()!!)
 
             }
 
-//            override fun onResponse(call: Call<List<Marsdata>>, response: Response<List<Marsdata>>) {
-//                showData(response.body()!!)
-//            }
-
         })
-
 
     }
 
 
 
-
+    private fun showAllData (footballList: FootballList){
+        recyclerview.apply {
+            layoutManager = LinearLayoutManager(activity)
+            adapter = FootballAdapter(footballList)
+        }
+    }
 
 
 

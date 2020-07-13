@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -11,6 +11,7 @@
         android:orientation="vertical">
 
     <TextView
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="100"
@@ -19,6 +20,7 @@
         />
 
     <TextView
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="100"
@@ -29,12 +31,13 @@
 
 
     <TextView
-        android:paddingTop="20dp"
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="200"
         android:textSize="20dp"
         android:id="@+id/bodies"
+        android:paddingBottom="20dp"
         />
 
 </LinearLayout>
